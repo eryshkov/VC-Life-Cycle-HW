@@ -1,5 +1,5 @@
 //
-//  RedViewController.swift
+//  BlueViewController.swift
 //  VC Life Cycle HW
 //
 //  Created by Evgeniy Ryshkov on 08.09.2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RedViewController: ViewController {
+class BlueViewController: ViewController {
 
     @IBOutlet weak var tmpTextView: UITextView!
     
@@ -17,9 +17,8 @@ class RedViewController: ViewController {
     }
     
     override var name: String {
-        return "RedViewController"
+        return "BlueViewController"
     }
-    
+   
 
 }
-

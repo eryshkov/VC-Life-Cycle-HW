@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pz-Ma-Cx7">
-                                <rect key="frame" x="16" y="84" width="288" height="284"/>
+                                <rect key="frame" x="16" y="40" width="288" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -30,7 +29,7 @@
                         <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Pz-Ma-Cx7" secondAttribute="trailing" constant="16" id="N3I-LF-gtf"/>
-                            <constraint firstItem="1Pz-Ma-Cx7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="Nau-NZ-LjD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Pz-Ma-Cx7" secondAttribute="bottom" constant="20" id="RM8-D7-WDv"/>
                             <constraint firstItem="1Pz-Ma-Cx7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Znw-tG-MVM"/>
                             <constraint firstItem="1Pz-Ma-Cx7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qhf-tf-EuU"/>
                         </constraints>
@@ -45,7 +44,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="textView" destination="1Pz-Ma-Cx7" id="nyQ-2y-Gx3"/>
+                        <outlet property="tmpTextView" destination="1Pz-Ma-Cx7" id="Qmm-U2-4Vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,11 +54,26 @@
         <!--Blue-->
         <scene sceneID="tCP-hp-JtZ">
             <objects>
-                <viewController id="xm1-vR-vtd" sceneMemberID="viewController">
+                <viewController id="xm1-vR-vtd" customClass="BlueViewController" customModule="VC_Life_Cycle_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYG-hl-AnD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THZ-5B-tAa">
+                                <rect key="frame" x="16" y="40" width="288" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3pF-DK-jvm" firstAttribute="bottom" secondItem="THZ-5B-tAa" secondAttribute="bottom" constant="20" id="7bR-ui-leI"/>
+                            <constraint firstItem="THZ-5B-tAa" firstAttribute="top" secondItem="3pF-DK-jvm" secondAttribute="top" constant="20" id="QOa-44-CJz"/>
+                            <constraint firstItem="THZ-5B-tAa" firstAttribute="leading" secondItem="3pF-DK-jvm" secondAttribute="leading" constant="16" id="Z1z-Yy-IgR"/>
+                            <constraint firstItem="3pF-DK-jvm" firstAttribute="trailing" secondItem="THZ-5B-tAa" secondAttribute="trailing" constant="16" id="bad-gg-EsG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3pF-DK-jvm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Blue" id="ziM-RE-djj">
@@ -70,6 +84,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tmpTextView" destination="THZ-5B-tAa" id="gLZ-Ku-uGa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5D5-9S-U2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -78,17 +95,39 @@
         <!--Yellow-->
         <scene sceneID="ldR-oj-aP5">
             <objects>
-                <viewController id="djU-hI-VmT" sceneMemberID="viewController">
+                <viewController id="djU-hI-VmT" customClass="YellowViewController" customModule="VC_Life_Cycle_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Dh-Zq-tMQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfh-G9-00t">
+                                <rect key="frame" x="16" y="40" width="288" height="508"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dfh-G9-00t" firstAttribute="leading" secondItem="tQ1-oZ-jMR" secondAttribute="leading" constant="16" id="37Z-Cc-nBF"/>
+                            <constraint firstItem="tQ1-oZ-jMR" firstAttribute="trailing" secondItem="dfh-G9-00t" secondAttribute="trailing" constant="16" id="3jp-pY-5Jc"/>
+                            <constraint firstItem="dfh-G9-00t" firstAttribute="top" secondItem="tQ1-oZ-jMR" secondAttribute="top" constant="20" id="L6R-FO-usV"/>
+                            <constraint firstItem="tQ1-oZ-jMR" firstAttribute="bottom" secondItem="dfh-G9-00t" secondAttribute="bottom" constant="20" id="qMC-bn-xCd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tQ1-oZ-jMR"/>
                     </view>
                     <navigationItem key="navigationItem" title="Yellow" id="9wZ-fJ-lAm">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ji0-BR-BYu"/>
-                        <barButtonItem key="rightBarButtonItem" title="To Red" id="8BJ-fO-K3D"/>
+                        <barButtonItem key="rightBarButtonItem" title="To Red" id="8BJ-fO-K3D">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="wjo-kM-E4w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tmpTextView" destination="dfh-G9-00t" id="NSA-CC-EFm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pZ-UR-wzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,4 +152,7 @@
             <point key="canvasLocation" x="278" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wjo-kM-E4w"/>
+    </inferredMetricsTieBreakers>
 </document>

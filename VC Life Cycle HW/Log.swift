@@ -19,11 +19,15 @@ class Log {
         self.lines.append(newLine)
         
         currentTextView.text.removeAll()
-        for line in lines {
+        for line in lines.reversed() {
             if let line = line {
                 currentTextView.text.append(line)
             }
         }
         
+        let y = currentTextView.contentSize.height - currentTextView.bounds.size.height
+        if y > 0 {
+            currentTextView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
+        }
     }
 }
