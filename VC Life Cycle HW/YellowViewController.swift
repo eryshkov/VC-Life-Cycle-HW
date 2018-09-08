@@ -10,7 +10,6 @@ import UIKit
 
 class YellowViewController: ViewController {
 
-    
     @IBOutlet weak var tmpTextView: UITextView!
     
     override weak var textView: UITextView! {
