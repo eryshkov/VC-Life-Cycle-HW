@@ -10,10 +10,11 @@ import UIKit
 
 class RedViewController: ViewController {
 
-    @IBOutlet weak var tmpTextView: UITextView!
+
+    @IBOutlet weak var tmpTableView: UITableView!
     
-    override weak var textView: UITextView! {
-        return tmpTextView
+    override weak var tableView: UITableView! {
+        return tmpTableView
     }
     
     override var name: String {

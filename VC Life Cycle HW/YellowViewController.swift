@@ -10,14 +10,14 @@ import UIKit
 
 class YellowViewController: ViewController {
 
-    @IBOutlet weak var tmpTextView: UITextView!
+    @IBOutlet weak var tmpTableView: UITableView!
     
-    override weak var textView: UITextView! {
-        return tmpTextView
+    override weak var tableView: UITableView! {
+        return tmpTableView
     }
     
     override var name: String {
-        return "YellowViewController"
+        return "RedViewController"
     }
 
 }
