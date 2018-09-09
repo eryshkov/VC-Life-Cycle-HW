@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         return UITableView()
     }
     
+    override func loadView() {
+        super.loadView()
+        log.addLine(line: "\(name) \(#function)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -56,6 +61,10 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         addToTableView(line: "\(name) \(#function)")
+    }
+    
+    deinit {
+        log.addLine(line: "\(name) deinit()")
     }
     
     //MARK: - Update View
