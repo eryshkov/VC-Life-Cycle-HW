@@ -9,8 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     let log = Log.context
+    let sectionNumber = 0
+    
     var name: String {
         return "ViewController"
     }
@@ -23,48 +25,69 @@ class ViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        log.addLine(line: "\(name) \(#function)", currentTableView: tableView)
+        addToTableView(line: "\(name) \(#function)")
     }
-
+    
+    //MARK: - Update View
+    func addToTableView(line: String) {
+        log.addLine(line: line)
+        updateTableView()
+    }
+    
+    func updateTableView() {
+        var indexPathes = [IndexPath]()
+        var rowsInTable = tableView.numberOfRows(inSection: sectionNumber)
+        let rowsInLog = log.lines.count
+        
+        while rowsInLog > rowsInTable {
+            let indexPath = IndexPath(row: rowsInLog - rowsInTable - 1, section: sectionNumber)
+            indexPathes.append(indexPath)
+            rowsInTable += 1
+        }
+        
+        tableView.insertRows(at: indexPathes, with: .fade)
+    }
+    
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return log.lines.count
+        return log.lines.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
