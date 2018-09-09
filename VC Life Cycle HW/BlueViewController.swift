@@ -17,7 +17,7 @@ class BlueViewController: ViewController {
     }
     
     override var name: String {
-        return "RedViewController"
+        return "BlueViewController"
     }
    
 
