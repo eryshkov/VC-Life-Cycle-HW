@@ -25,9 +25,10 @@ class Log {
             }
         }
         
-        let y = currentTextView.contentSize.height - currentTextView.bounds.size.height
-        if y > 0 {
-            currentTextView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
-        }
+        currentTextView.isScrollEnabled = false
+//        let y = currentTextView.contentSize.height - currentTextView.bounds.size.height
+//        if y > 0 {
+//            currentTextView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
+//        }
     }
 }
